@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Card, Link, Set, Button, Box, Text } from "fannypack";
+import { Card, Link, Set, Button, Box, Text, Tag } from "fannypack";
 
 export const EventCard = ({ event }: { event: any }) => (
   <Card
@@ -14,8 +14,16 @@ export const EventCard = ({ event }: { event: any }) => (
       </Set>
     }
   >
-    <Box>
-      <Text>
+    <Box marginBottom="5px">
+      <Set>
+        {event.tags &&
+          event.tags.map((tag: string, index: number) => (
+            <Tag key={index}>{tag}</Tag>
+          ))}
+      </Set>
+    </Box>
+    <Box marginBottom="5px">
+      <Text use="sub">
         {event.time} at {event.locations[0].locationRoom} at{" "}
         <Link href={event.locations[0].locationUrl} target="_blank">
           {event.locations[0].name}
