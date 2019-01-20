@@ -1,36 +1,18 @@
 import React, { Component } from "react";
-import { Heading, Card, Set, Button, Link, Text, Box } from "fannypack";
+import { Heading } from "fannypack";
+import { EventCard } from "../EventCard/EventCard";
 
 export class EventList extends Component {
   state = {
     events: createEvents()
   };
+
   render() {
     return (
       <React.Fragment>
         <Heading>Events</Heading>
         {this.state.events.map(event => (
-          <Card
-            marginBottom="10px"
-            title={event.title}
-            footer={
-              <Set>
-                <Link href={event.learnMoreUrl} target="_blank">
-                  <Button>Learn more</Button>
-                </Link>
-              </Set>
-            }
-          >
-            <Box>
-              <Text>
-                {event.time} at {event.locationRoom} at{" "}
-                <Link href={event.locationUrl} target="_blank">
-                  {event.location}
-                </Link>
-              </Text>
-            </Box>
-            {event.description}
-          </Card>
+          <EventCard key={event.key} event={event} />
         ))}
       </React.Fragment>
     );
@@ -59,6 +41,7 @@ const createEvents = (count: number = 20) => {
   let events = [];
   for (let index = 0; index < count; index++) {
     events.push({
+      key: `event-${index}`,
       title:
         "Make-Up Date - Special Ed Workshop Part 2: Measurable Goals & Types of Services",
       eventUrl,
@@ -66,9 +49,13 @@ const createEvents = (count: number = 20) => {
       tags: tags[0],
       date: "Sunday, January 20, 2019",
       time,
-      location,
-      locationRoom,
-      locationUrl,
+      locations: [
+        {
+          name: location,
+          locationRoom,
+          locationUrl
+        }
+      ],
       learnMoreUrl
     });
   }
