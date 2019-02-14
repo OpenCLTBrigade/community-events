@@ -28,7 +28,7 @@ const location = "University City Regional";
 const locationRoom = "Community Room";
 const locationUrl = "https://www.cmlibrary.org/branch/university-city-regional";
 const learnMoreUrl =
-  "https://www.cmlibrary.org/event/96323-make-date-special-ed-workshop-part-2-measurable-goals-types-services";
+  "https://www.cmlibrary.org/event/96510-technology-tutors-1-1-support-session";
 
 const tags = [
   ["Adults", "Older Adults", "writing", "Books/Literature", "Multicultural"]
