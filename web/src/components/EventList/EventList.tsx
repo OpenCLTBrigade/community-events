@@ -4,7 +4,7 @@ import { EventCard } from "../EventCard/EventCard";
 import { useFetch } from "../../hooks/use-fetch";
 
 export function EventList() {
-  const [events, loading] = useFetch<Event[]>("/events");
+  const [events, loading] = useFetch<Event[]>("/api/events");
   if (loading) return <div>Loading...</div>;
 
   return (
