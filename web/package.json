@@ -16,6 +16,8 @@
     "@types/react": "^16.8.2",
     "@types/react-dom": "^16.8.0",
     "@types/react-router": "^4.4.3",
+    "chance": "^1.0.18",
+    "json-server": "^0.14.2",
     "react-scripts": "2.1.3",
     "typescript": "3.2.4"
   },
@@ -23,7 +25,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "mock-server": "json-server mock/events.js"
   },
   "eslintConfig": {
     "extends": "react-app"
