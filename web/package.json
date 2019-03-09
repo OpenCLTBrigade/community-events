@@ -26,12 +26,12 @@
         "typescript": "3.2.4"
     },
     "scripts": {
-        "start": "react-scripts start",
+        "start": "npm-run-all -p mock-server start-app",
         "build": "react-scripts build",
         "test": "react-scripts test",
         "eject": "react-scripts eject",
-        "dev": "npm-run-all -l start mock-server",
         "lint": "lint-staged",
+        "start-app": "react-scripts start",
         "mock-server": "json-server mock/events.js --port 4000 --routes mock/routes.json"
     },
     "proxy": "http://localhost:4000",
