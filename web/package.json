@@ -1,41 +1,61 @@
 {
-  "name": "web",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "emotion": "^10.0.6",
-    "fannypack": "^4.8.2",
-    "react": "^16.8.1",
-    "react-dom": "^16.8.1",
-    "react-router": "^4.3.1",
-    "react-test-renderer": "^16.8.1"
-  },
-  "devDependencies": {
-    "@types/jest": "23.3.13",
-    "@types/node": "10.12.18",
-    "@types/react": "^16.8.2",
-    "@types/react-dom": "^16.8.0",
-    "@types/react-router": "^4.4.3",
-    "chance": "^1.0.18",
-    "json-server": "^0.14.2",
-    "react-scripts": "2.1.3",
-    "typescript": "3.2.4"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "mock-server": "json-server mock/events.js --port 4000 --routes mock/routes.json"
-  },
-  "proxy": "http://localhost:4000",
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ]
+    "name": "web",
+    "version": "0.1.0",
+    "private": true,
+    "dependencies": {
+        "emotion": "^10.0.6",
+        "fannypack": "^4.8.2",
+        "npm-run-all": "^4.1.5",
+        "react": "^16.8.1",
+        "react-dom": "^16.8.1",
+        "react-router": "^4.3.1",
+        "react-test-renderer": "^16.8.1"
+    },
+    "devDependencies": {
+        "@types/jest": "23.3.13",
+        "@types/node": "10.12.18",
+        "@types/react": "^16.8.2",
+        "@types/react-dom": "^16.8.0",
+        "@types/react-router": "^4.4.3",
+        "chance": "^1.0.18",
+        "husky": "^1.3.1",
+        "json-server": "^0.14.2",
+        "lint-staged": "^8.1.5",
+        "prettier": "1.16.4",
+        "react-scripts": "2.1.3",
+        "typescript": "3.2.4"
+    },
+    "scripts": {
+        "start": "react-scripts start",
+        "build": "react-scripts build",
+        "test": "react-scripts test",
+        "eject": "react-scripts eject",
+        "dev": "npm-run-all -l start mock-server",
+        "mock-server": "json-server mock/events.js --port 4000 --routes mock/routes.json"
+    },
+    "proxy": "http://localhost:4000",
+    "eslintConfig": {
+        "extends": "react-app"
+    },
+    "browserslist": [
+        ">0.2%",
+        "not dead",
+        "not ie <= 11",
+        "not op_mini all"
+    ],
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged"
+        }
+    },
+    "lint-staged": {
+        "*.{js,json,css,md}": [
+            "prettier --write",
+            "git add"
+        ],
+        "*.{ts,tsx}": [
+            "prettier --write --parser typescript",
+            "git add"
+        ]
+    }
 }
