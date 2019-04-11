@@ -1,15 +1,15 @@
 import React from 'react'
 
-import { Card, Link, Set, Button, Box, Text, Tag } from 'fannypack'
+import { Card, Link, Set, Box, Text, Tag } from 'fannypack'
 
-export const EventCard = ({ event }: { event: any }) => (
+export const EventCard = ({ event }: { event: CommunityEvent }) => (
     <Card
         marginBottom="10px"
         title={event.title}
-        footer={
+        headerActions={
             <Set>
                 <Link href={event.learnMoreUrl} target="_blank">
-                    <Button>Learn more</Button>
+                    Learn more
                 </Link>
             </Set>
         }>
