@@ -1,3 +1,9 @@
+## Pre-requisites
+
+-   We recommend using Node ^8.10.0 || >=9.10.0 to ensure compatability with scripts dependencies.
+-   This project uses `yarn` as its package manager. `npm install -g yarn` to make sure you have it.
+-   Run `yarn` to install dependencies.
+
 ## Available Scripts
 
 In the project directory, you can run:
