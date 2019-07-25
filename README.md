@@ -13,7 +13,8 @@ Ideally this application will show organizations what's possible when their even
 
 ## Getting Started
 
-[Getting started with web](web/README.md)
+[Getting started with web (React)](web/README.md)
+[Getting started with scrapers (Python)](web/README.md)
 
 ## Contributing
 We encourage you to contribute to Community Events! Please check out the [Contributing guide](CONTRIBUTING.md) for guidelines about how to proceed. Join us!
